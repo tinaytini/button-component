@@ -1,72 +1,51 @@
 
 import './App.css'
 import Button from './Button'
+import { Star } from './icons/Star';
+
+type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'link-color' | 'link-grey' | 'destructive';
+
+
+interface ButtonConfig {
+  size: 'M' | 'L' | 'XL' | '2XL';
+  showStar: boolean;
+  starPosition: null | 'left' | 'right' | 'center';
+  starSize?: string
+}
+
+const buttonVariants: ButtonVariant[] = ['primary', 'secondary', 'tertiary', 'link-color', 'link-grey', 'destructive'];
+
+
+const buttons: ButtonConfig[] = [
+  { size: 'M', showStar: false, starPosition: null },
+  { size: 'L', showStar: true, starPosition: 'left' },
+  { size: 'XL', showStar: true, starPosition: 'right' },
+  { size: '2XL', showStar: false, starPosition: null },
+  { size: '2XL', showStar: true, starPosition: 'center', starSize: 'h-6 w-6' },
+]
+
+
 
 function App() {
   return (
-    <div className='w-[695px] mx-auto my-0 flex flex-col justify-center items-center gap-16'>
-      <div className="flex justify-between items-center gap-5">
-        {}
-        <Button 
-          variant='primary'
-        />
-        <Button 
-          variant='primary'
-          disabled={true}
-        />
-      </div>
+    <>
+      {buttonVariants.map((variant) => (<div className='mx-auto my-12 flex justify-center items-center gap-12'>
+        {buttons.map(({ size, showStar, starPosition, starSize }, index) => (
+          <Button key={index} variant={variant} size={size}>
 
-      <div className="flex justify-between items-center gap-5">
-        <Button 
-          variant='secondary'
-        />
-        <Button 
-          variant='secondary'
-          disabled={true}
-        />
-      </div>
+            <div className='flex items-center gap-2'>
+              {(showStar && starPosition === 'left') && <Star />}
+              {starPosition !== 'center' && 'Button CTA'}
+              {(showStar && starPosition === 'center') && <Star size={starSize} />}
+              {(showStar && starPosition === 'right') && <Star />}
+            </div>
 
-      <div className="flex justify-between items-center gap-5">
-        <Button 
-          variant='tertiary'
-        />
-        <Button 
-          variant='tertiary'
-          disabled={true}
-        />
-      </div>
+          </Button>
+        ))}
+      </div>))
+      }
+    </>
 
-      <div className="flex justify-left items-center gap-5">
-        <Button 
-          variant='link-color'
-        />
-        <Button 
-          variant='link-color'
-          disabled={true}
-        />
-      </div>
-
-      <div className="flex justify-left items-center gap-5">
-        <Button 
-          variant='link-grey'
-        />
-        <Button 
-          variant='link-grey'
-          disabled={true}
-        />
-      </div>
-
-      <div className="flex justify-center items-center gap-5">
-        <Button 
-          variant='destructive'
-        />
-        <Button 
-          variant='destructive'
-          disabled={true}
-        />
-      </div>
-
-    </div>
   )
 }
 
