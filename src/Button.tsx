@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({ variant, disabled, size, children }) =>
         <button
             className={`
                 ${variants[variant]} 
-                ${sizes[size]} rounded flex justify-center items-center gap-1 font-[Noto_Sans]
+                ${sizes[size]} rounded flex justify-center items-center gap-1
             `}
             disabled={disabled}
         >
