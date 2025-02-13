@@ -5,7 +5,7 @@ import { Star } from "../icons/Star";
 
 const LinkColor = () => {
     return (
-        <div className="flex justify-left items-center gap-5">
+        <div className="flex justify-start content-start items-center">
             <Button variant="link-color" size="M">
                 <span>Button CTA</span>
             </Button>

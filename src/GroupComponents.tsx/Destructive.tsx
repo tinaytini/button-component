@@ -5,7 +5,7 @@ import { Star } from "../icons/Star";
 
 const Destructive = () => {
     return (
-        <div className="flex justify-left items-center gap-5">
+        <div className="flex justify-start items-center gap-5">
             <Button variant="destructive" size="M">
                 <span>Button CTA</span>
             </Button>

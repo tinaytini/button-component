@@ -11,15 +11,16 @@ import Destructive from './GroupComponents.tsx/Destructive';
 
 function App() {
   return (
-    <div className=' flex flex-col justify-center content-center items-center gap-12'>
-      <Primary/>
-      <Secondary />
-      <Tertiary />
-      <LinkColor />
-      <LinkGrey />
-      <Destructive />
+    <div className='h-[768px] w-[1440px] flex flex-col items-center bg-white py-28'>
+      <div className='flex flex-col justify-center items-start gap-12'>
+        <Primary />
+        <Secondary />
+        <Tertiary />
+        <LinkColor />
+        <LinkGrey />
+        <Destructive />
+      </div>
     </div>
-
   )
 }
 

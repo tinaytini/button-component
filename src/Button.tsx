@@ -17,8 +17,8 @@ const variants = {
     'primary': `bg-indigo-700 text-white hover:bg-indigo-800 ${focusStyles} disabled:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed`,
     'secondary': `bg-white text-neutral-900 border-[0.5px] border-neutral-200 hover:bg-neutral-50 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:border-neutral-100 disabled:cursor-not-allowed ${focusStyles}`,
     'tertiary': `text-indigo-700 hover:bg-neutral-50 disabled:text-neutral-400 disabled:hover:bg-white disabled:cursor-not-allowed ${focusStyles}`,
-    'link-color': `text-indigo-700 hover:text-indigo-800 disabled:text-neutral-400 disabled:cursor-not-allowed ${focusStyles}`,
-    'link-grey': `text-neutral-600 hover:text-neutral-900 disabled:text-neutral-400 disabled:text-neutral-400 disabled:cursor-not-allowed ${focusStyles}`,
+    'link-color': `p-px text-indigo-700 hover:text-indigo-800 disabled:text-neutral-400 disabled:cursor-not-allowed focus:outline-indigo-200 focus:outline-2`,
+    'link-grey': `p-px text-neutral-600 hover:text-neutral-900 disabled:text-neutral-400 disabled:text-neutral-400 disabled:cursor-not-allowed`,
     'destructive': `bg-red-600 text-white hover:bg-red-700 disabled:bg-white disabled:text-neutral-400 disabled:cursor-not-allowed focus:outline-red-200 focus:outline-2`
 };
 
@@ -27,7 +27,8 @@ const Button: React.FC<ButtonProps> = ({ variant, disabled, size, children }) =>
         <button
             className={`
                 ${variants[variant]} 
-                ${sizes[size]} rounded flex justify-center items-center gap-1
+                ${sizes[size]} 
+                rounded flex justify-center items-center gap-1
             `}
             disabled={disabled}
         >
